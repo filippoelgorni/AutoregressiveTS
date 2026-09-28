@@ -77,7 +77,7 @@ $
 = Replica Computation
 The minimization problem can be reframed as a statistical mechanics problem. We optimise each row of $w_j=W_(i j)$ inipendently, and we can write the partition function for the $i$-th row as:
 $
-  Z_i=int dif bw e^(-beta lambda/2 ||bw||^2-M beta cL_i (W))=int dif bw e^(-beta lambda/2 ||bw||^2+beta sum_(mu=1)^M log sigma(x_i^mu 1/sqrt(L) sum_(j<i) w_j x_j^mu))
+  Z_i=int dif bw e^(-beta lambda/2 ||bw||^2-M beta cL_i (bw))=int dif bw e^(-beta lambda/2 ||bw||^2+beta sum_(mu=1)^M log sigma(x_i^mu 1/sqrt(L) sum_(j<i) w_j x_j^mu))
 $
 
 The replicated partition function is then:
@@ -131,7 +131,7 @@ $
   = & int prod_(a b) (dif q^(a b) dif hat(q)^(a b))/(2 pi) prod_a (dif m^a dif hat(m)^a)/(2 pi) e^(i L sum_(a b) hat(q)^(a b) q_(a b)+i L sum_a hat(m)^a m_a) \
   & times [int dif h_0 prod_a dif h_a e^log(sum_(x_i=pm 1) sigma(x_i h_0) prod_a sigma(x_i h_a)^beta)
     cal(N)(h_0, h_1, ..., h_n; 0, Sigma)]^M \
-  & times EE_(W_(<i)^star, bw_i^star) int prod_a dif bw^a e^(-beta lambda/2 sum_a ||bw_a||^2-i L sum_(a b) hat(q)^(a b)(sum_(j k) w^a_j C^((i))_(j k)(W^star_i) w^b_i)/L-i L sum_a hat(m)^a (sum_(j k)w^star_i_j C^((i))_(j k)(W^star_i) w^a_i)/L)
+  & times EE_(W_(<i)^star, bw_i^star) int prod_a dif bw^a e^(-beta lambda/2 sum_a ||bw_a||^2-i L sum_(a b) hat(q)^(a b)(sum_(j k) w^a_j C^((i))_(j k)(W^star_(<i)) w^b_k)/L-i L sum_a hat(m)^a (sum_(j k)(w^star_i)_j C^((i))_(j k)(W^star_(<i)) w^a_k)/L)
 $
 
 == Spectrum of $C^((i))$
